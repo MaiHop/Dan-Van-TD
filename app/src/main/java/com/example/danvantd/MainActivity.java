@@ -10,6 +10,8 @@ import com.example.danvantd.Data.API.Home_api;
 import com.example.danvantd.Domain.Model.Tintuc;
 import com.example.danvantd.Service.ServiceBuilder;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -23,22 +25,19 @@ public class MainActivity extends AppCompatActivity {
 
         tv_listTInTuc = findViewById(R.id.tv_listTinTuc);
         Home_api api = ServiceBuilder.buildService(Home_api.class);
-        Call<Tintuc> request = api.getTinTuc();
-        request.enqueue(new Callback<Tintuc>() {
+        Call<List<Tintuc>> request = api.getlistTinTuc();
+        request.enqueue(new Callback<List<Tintuc>>() {
             @Override
-            public void onResponse(Call<Tintuc> call, Response<Tintuc> response) {
-                if (response.isSuccessful() && response.body() != null){
-                    Tintuc tt =response.body();
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                        tv_listTInTuc.setText(Html.fromHtml(tt.getNoidungvi(), Html.FROM_HTML_MODE_LEGACY));
-                    } else {
-                        tv_listTInTuc.setText(Html.fromHtml(tt.getNoidungvi()));
+            public void onResponse(Call<List<Tintuc>> call, Response<List<Tintuc>> response) {
+                if(response.isSuccessful() && response.body() !=null){
+                    for (Tintuc tt : response.body()){
+                        Log.d("ID TT: ", String.valueOf(tt.getId()));
                     }
                 }
             }
 
             @Override
-            public void onFailure(Call<Tintuc> call, Throwable t) {
+            public void onFailure(Call<List<Tintuc>> call, Throwable t) {
                 Log.e("API Error", "Không thể kết nối đến API", t);
             }
         });
