@@ -21,7 +21,12 @@ public class Home_RepositoryImpl implements Home_Repository {
             home_api = ServiceBuilder.buildService(Home_api.class);
             Call<List<Home>> request = home_api.getlistTinTuc();
 
-            request.enqueue(callback);
+            // Đảm bảo callback không phải null
+            if (callback != null) {
+                request.enqueue(callback);
+            } else {
+                throw new IllegalArgumentException("Callback is null");
+            }
 //            request.enqueue(new Callback<List<Tintuc>>() {
 //                @Override
 //                public void onResponse(Call<List<Tintuc>> call, Response<List<Tintuc>> response) {

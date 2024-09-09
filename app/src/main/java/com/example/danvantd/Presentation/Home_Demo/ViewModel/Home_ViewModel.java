@@ -1,9 +1,12 @@
 package com.example.danvantd.Presentation.Home_Demo.ViewModel;
 
+import android.util.Log;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.example.danvantd.Data.Repository.Home_RepositoryImpl;
 import com.example.danvantd.Domain.Model.Home;
 import com.example.danvantd.Domain.Repository.Home_Repository;
 
@@ -17,9 +20,8 @@ public class Home_ViewModel extends ViewModel {
     private Home_Repository home_repository;
     private MutableLiveData<List<Home>> list_News_LiveData = new MutableLiveData<>();
 
-    public Home_ViewModel(Home_Repository home_repository) {
-        this.home_repository = home_repository;
-        this.fetch_News();
+    public Home_ViewModel() {
+        this.home_repository = new Home_RepositoryImpl();
     }
 
     public LiveData<List<Home>> getListNewsLiveData() {
@@ -39,6 +41,7 @@ public class Home_ViewModel extends ViewModel {
             @Override
             public void onFailure(Call<List<Home>> call, Throwable t) {
                 list_News_LiveData.postValue(null);
+                Log.e("API Error", "Không thể kết nối đến API", t);
             }
         });
     }
