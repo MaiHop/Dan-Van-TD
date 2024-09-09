@@ -8,7 +8,8 @@ import android.widget.TextView;
 
 import com.example.danvantd.Data.API.Home_api;
 import com.example.danvantd.Domain.Model.Tintuc;
-import com.example.danvantd.Service.ServiceBuilder;
+import com.example.danvantd.di.ServiceBuilder;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
