@@ -30,7 +30,8 @@ public class Home_ViewHolder extends RecyclerView.ViewHolder {
                 .placeholder(R.drawable.ic_launcher_background) // ảnh hiển thị khi đang tải
                 .error(R.drawable.ic_launcher_background)            // ảnh hiển thị khi có lỗi
                 .into(iv_Photo);
-
+        this.tv_Tenvi.setText(home.getTenvi());
+        this.tv_Motavi.setText(home.getMotavi());
 
     }
 

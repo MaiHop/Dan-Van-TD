@@ -1,6 +1,7 @@
 package com.example.danvantd.Data.API;
 
 
+import com.example.danvantd.Domain.Model.Home;
 import com.example.danvantd.Domain.Model.Tintuc;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import retrofit2.http.GET;
 
 public interface Home_api {
     @GET("ajax/ajax_news.php?type=tin-tuc&noibat=1")
-    Call<List<Tintuc>> getlistTinTuc();
+    Call<List<Home>> getlistTinTuc();
 
     @GET("ajax/ajax_news.php?id=282")
     Call<Tintuc> getTinTuc();
