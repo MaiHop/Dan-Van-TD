@@ -26,7 +26,6 @@ public class Home_Demo_Acti extends AppCompatActivity {
     private Home_ViewModel homeViewModel;
     private RecyclerView rv_ListNews;
 
-    private Home_RepositoryImpl home_repository;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -10,5 +10,5 @@ import retrofit2.Callback;
 public interface Home_Repository {
 
     public void getlistTinTuc(Callback<List<Home>> callback);
-    public void getTinTuc();
+
 }

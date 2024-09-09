@@ -2,13 +2,12 @@ package com.example.danvantd;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.example.danvantd.Data.API.Home_api;
+import com.example.danvantd.Data.API.App_api;
 import com.example.danvantd.Domain.Model.Home;
-import com.example.danvantd.Domain.Model.Tintuc;
+import com.example.danvantd.Domain.Model.TrangChiTiet;
 import com.example.danvantd.di.ServiceBuilder;
 
 
@@ -26,22 +25,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         tv_listTInTuc = findViewById(R.id.tv_listTinTuc);
-        Home_api api = ServiceBuilder.buildService(Home_api.class);
-        Call<List<Home>> request = api.getlistTinTuc();
-        request.enqueue(new Callback<List<Home>>() {
+        App_api api = ServiceBuilder.buildService(App_api.class);
+        Call<TrangChiTiet> request = api.getTinTucbyId(282);
+        request.enqueue(new Callback<TrangChiTiet>() {
             @Override
-            public void onResponse(Call<List<Home>> call, Response<List<Home>> response) {
+            public void onResponse(Call<TrangChiTiet> call, Response<TrangChiTiet> response) {
                 if(response.isSuccessful() && response.body() != null){
-                    for(Home h : response.body()){
-                        Log.d("ID: ", h.getTenvi());
-                    }
+                    tv_listTInTuc
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Home>> call, Throwable t) {
+            public void onFailure(Call<TrangChiTiet> call, Throwable t) {
                 Log.e("API Error", "Không thể kết nối đến API", t);
             }
         });
     }
+
+
 }
