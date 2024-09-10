@@ -2,6 +2,7 @@ package com.example.danvantd;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -31,7 +32,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<TrangChiTiet> call, Response<TrangChiTiet> response) {
                 if(response.isSuccessful() && response.body() != null){
-                    tv_listTInTuc
+                    TrangChiTiet d = response.body();
+                    tv_listTInTuc.setText(d.getNoidungvi());
+//                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+//                        tv_listTInTuc.setText(Html.fromHtml(d.getNoidungvi(), Html.FROM_HTML_MODE_LEGACY));
+//                    } else {
+//                        tv_listTInTuc.setText(Html.fromHtml(d.getNoidungvi()));
+//                    }
                 }
             }
 
@@ -40,6 +47,21 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("API Error", "Không thể kết nối đến API", t);
             }
         });
+    }
+
+    public String getSrcValue(String input) {
+        String start = "src=\"";
+        String end = "\"";
+
+        int startIndex = input.indexOf(start);
+        if (startIndex != -1) {
+            startIndex += start.length();
+            int endIndex = input.indexOf(end, startIndex);
+            if (endIndex != -1) {
+                return input.substring(startIndex, endIndex);
+            }
+        }
+        return null;
     }
 
 
