@@ -7,12 +7,8 @@
     tools:context=".Presentation.Home_Demo.Home_Demo_Acti">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_ListNews"
+        android:id="@+id/rv_home_News"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp" />
+        android:layout_height="match_parent" />
         />
 </LinearLayout>

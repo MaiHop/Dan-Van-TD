@@ -3,11 +3,11 @@ package com.example.danvantd.Domain.Model;
 import java.io.Serializable;
 import java.util.List;
 
-public class TrangChiTiet implements Serializable {
-    private int id, luotxemid_list, id_cat, id_item, id_sub;
+public class News_Detail implements Serializable {
+    private int id, luotxem,id_list, id_cat, id_item, id_sub;
     private long ngaytao;
     private String type, tenvi, tenkhongdauvi, tenkhongdauen, noidungvi, photo, options;
-    private List<New>  list_news;
+    private List<News> news;
 
     public int getId() {
         return id;
@@ -17,12 +17,20 @@ public class TrangChiTiet implements Serializable {
         this.id = id;
     }
 
-    public int getLuotxemid_list() {
-        return luotxemid_list;
+    public int getLuotxem() {
+        return luotxem;
     }
 
-    public void setLuotxemid_list(int luotxemid_list) {
-        this.luotxemid_list = luotxemid_list;
+    public void setLuotxem(int luotxem) {
+        this.luotxem = luotxem;
+    }
+
+    public int getId_list() {
+        return id_list;
+    }
+
+    public void setId_list(int id_list) {
+        this.id_list = id_list;
     }
 
     public int getId_cat() {
@@ -113,49 +121,13 @@ public class TrangChiTiet implements Serializable {
         this.options = options;
     }
 
-    public List<New> getList_news() {
-        return list_news;
+    public List<News> getNews() {
+        return news;
     }
 
-    public void setList_news(List<New> list_news) {
-        this.list_news = list_news;
-    }
-}
-
-class New implements Serializable{
-    private int id;
-    private String tenvi, photo;
-    private long ngaytao;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTenvi() {
-        return tenvi;
-    }
-
-    public void setTenvi(String tenvi) {
-        this.tenvi = tenvi;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
-    }
-
-    public long getNgaytao() {
-        return ngaytao;
-    }
-
-    public void setNgaytao(long ngaytao) {
-        this.ngaytao = ngaytao;
+    public void setNews(List<News> news) {
+        this.news = news;
     }
 }
+
+

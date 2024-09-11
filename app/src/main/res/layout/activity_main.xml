@@ -19,6 +19,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Hello World!" />
+            <TextView
+                android:id="@+id/tv_Test_Noidungvi_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/holo_blue_light"
+                android:text="Hello World!" />
+            <TextView
+                android:id="@+id/tv_Test_Noidungvi_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@android:color/holo_red_light"
+                android:text="Hello World!" />
         </LinearLayout>
     </ScrollView>
 

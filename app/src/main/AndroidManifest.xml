@@ -16,8 +16,14 @@
         android:theme="@style/Theme.DanVanTD"
         tools:targetApi="31">
         <activity
-            android:name=".Presentation.TrangChiTiet_Demo.TrangChiTiet_Demo_Acti"
-            android:exported="false" />
+            android:name=".Presentation.DetailPage_Demo.DetailNew_Demo_Acti"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Presentation.Home_Demo.Home_Demo_Acti"
             android:exported="true">

@@ -1,12 +1,16 @@
 package com.example.danvantd.Domain.Model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 
-public class Tintuc implements Serializable {
-    private int id, doc_sohieu,luotxem,id_list, id_cat, id_item, id_sub;
-    private String tenvi, motavi, photo, type, tenkhongdauvi, tenkhongdauen, noidungvi;
-    private long doc_ngaybanhanh,ngaytao;
+public class Document_Detail implements Serializable {
+    private int id, luotxem,id_list, id_cat, id_item, id_sub;
+    private long ngaytao;
+    private String type, tenvi, tenkhongdauvi, tenkhongdauen, noidungvi, photo, options;
+    private List<News> news;
+
+    public Document_Detail() {
+    }
 
     public int getId() {
         return id;
@@ -14,14 +18,6 @@ public class Tintuc implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getDoc_sohieu() {
-        return doc_sohieu;
-    }
-
-    public void setDoc_sohieu(int doc_sohieu) {
-        this.doc_sohieu = doc_sohieu;
     }
 
     public int getLuotxem() {
@@ -64,28 +60,12 @@ public class Tintuc implements Serializable {
         this.id_sub = id_sub;
     }
 
-    public String getTenvi() {
-        return tenvi;
+    public long getNgaytao() {
+        return ngaytao;
     }
 
-    public void setTenvi(String tenvi) {
-        this.tenvi = tenvi;
-    }
-
-    public String getMotavi() {
-        return motavi;
-    }
-
-    public void setMotavi(String motavi) {
-        this.motavi = motavi;
-    }
-
-    public String getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setNgaytao(long ngaytao) {
+        this.ngaytao = ngaytao;
     }
 
     public String getType() {
@@ -94,6 +74,14 @@ public class Tintuc implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getTenvi() {
+        return tenvi;
+    }
+
+    public void setTenvi(String tenvi) {
+        this.tenvi = tenvi;
     }
 
     public String getTenkhongdauvi() {
@@ -120,19 +108,27 @@ public class Tintuc implements Serializable {
         this.noidungvi = noidungvi;
     }
 
-    public long getDoc_ngaybanhanh() {
-        return doc_ngaybanhanh;
+    public String getPhoto() {
+        return photo;
     }
 
-    public void setDoc_ngaybanhanh(long doc_ngaybanhanh) {
-        this.doc_ngaybanhanh = doc_ngaybanhanh;
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
-    public long getNgaytao() {
-        return ngaytao;
+    public String getOptions() {
+        return options;
     }
 
-    public void setNgaytao(long ngaytao) {
-        this.ngaytao = ngaytao;
+    public void setOptions(String options) {
+        this.options = options;
+    }
+
+    public List<News> getNews() {
+        return news;
+    }
+
+    public void setNews(List<News> news) {
+        this.news = news;
     }
 }
