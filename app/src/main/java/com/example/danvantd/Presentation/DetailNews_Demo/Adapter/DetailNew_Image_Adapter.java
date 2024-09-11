@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.DetailPage_Demo.Adapter;
+package com.example.danvantd.Presentation.DetailNews_Demo.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.Image;
-import com.example.danvantd.Presentation.DetailPage_Demo.ViewHolder.DetailNew_Image_ViewHolder;
+import com.example.danvantd.Presentation.DetailNews_Demo.ViewHolder.DetailNew_Image_ViewHolder;
 import com.example.danvantd.R;
 
 import java.util.List;

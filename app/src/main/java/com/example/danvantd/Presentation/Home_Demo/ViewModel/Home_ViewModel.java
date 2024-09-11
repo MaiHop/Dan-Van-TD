@@ -46,8 +46,4 @@ public class Home_ViewModel extends ViewModel {
         });
     }
 
-//    public MutableLiveData<List<Home>> getListCartLiveData() {
-//        res.readGioHang();
-//        return listGioHangLiveData;
-//    }
 }

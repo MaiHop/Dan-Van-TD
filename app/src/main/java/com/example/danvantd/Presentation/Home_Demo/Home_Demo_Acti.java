@@ -16,31 +16,31 @@ import com.example.danvantd.R;
 import java.util.List;
 
 public class Home_Demo_Acti extends AppCompatActivity {
-    private Home_ViewModel homeViewModel;
-    private RecyclerView rv_ListNews;
+    private Home_ViewModel home_viewModel;
+    private RecyclerView rv_home_News;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_demo);
 
-        rv_ListNews = findViewById(R.id.rv_home_News);
+        rv_home_News = findViewById(R.id.rv_home_News);
 
-        this.rv_ListNews.setLayoutManager(new LinearLayoutManager(this));
+        this.rv_home_News.setLayoutManager(new LinearLayoutManager(this));
 
-        homeViewModel = new ViewModelProvider(this).get(Home_ViewModel.class);
+        home_viewModel = new ViewModelProvider(this).get(Home_ViewModel.class);
         // Observe dữ liệu từ LiveData
-        homeViewModel.getListNewsLiveData().observe(this, new Observer<List<Home>>() {
+        home_viewModel.getListNewsLiveData().observe(this, new Observer<List<Home>>() {
             @Override
             public void onChanged(List<Home> homes) {
                 if(!homes.isEmpty()){
                     Home_Adapter adapter = new Home_Adapter(Home_Demo_Acti.this, homes);
-                    rv_ListNews.setAdapter(adapter);
+                    rv_home_News.setAdapter(adapter);
                 }
             }
         });
 
 //         Gọi hàm để lấy dữ liệu
-        homeViewModel.fetch_News();
+        home_viewModel.fetch_News();
     }
 }

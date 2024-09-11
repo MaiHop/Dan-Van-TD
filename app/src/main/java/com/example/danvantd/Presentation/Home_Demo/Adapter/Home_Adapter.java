@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.Home;
-import com.example.danvantd.Presentation.DetailPage_Demo.DetailNew_Demo_Acti;
+import com.example.danvantd.Presentation.DetailNews_Demo.DetailNew_Demo_Acti;
 import com.example.danvantd.Presentation.Home_Demo.ViewHolder.Home_ViewHolder;
 import com.example.danvantd.R;
 

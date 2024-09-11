@@ -38,7 +38,7 @@ public class Document_RepositoryImpl implements Document_Repository {
     public void getVanBan(Callback<Document_Detail> callback, int id) {
         try {
             app_api = ServiceBuilder.buildService(App_api.class);
-            Call<Document_Detail> request = app_api.getVanBanbyId(id);
+            Call<Document_Detail> request = app_api.getVanBanbyId("van-ban-cong-tac",id);
             if (callback != null) {
                 request.enqueue(callback);
             } else {

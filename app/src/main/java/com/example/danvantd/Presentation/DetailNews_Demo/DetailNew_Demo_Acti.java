@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.DetailPage_Demo;
+package com.example.danvantd.Presentation.DetailNews_Demo;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
@@ -15,9 +15,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.danvantd.Domain.Model.News_Detail;
 import com.example.danvantd.Domain.Model.Image;
-import com.example.danvantd.Presentation.DetailPage_Demo.Adapter.DetailNew_Image_Adapter;
-import com.example.danvantd.Presentation.DetailPage_Demo.Adapter.DetailNew_RelatedNews_Adapter;
-import com.example.danvantd.Presentation.DetailPage_Demo.ViewModel.DetailNew_ViewModel;
+import com.example.danvantd.Presentation.DetailNews_Demo.Adapter.DetailNew_Image_Adapter;
+import com.example.danvantd.Presentation.DetailNews_Demo.Adapter.DetailNew_RelatedNews_Adapter;
+import com.example.danvantd.Presentation.DetailNews_Demo.ViewModel.DetailNew_ViewModel;
 import com.example.danvantd.R;
 
 import java.util.ArrayList;

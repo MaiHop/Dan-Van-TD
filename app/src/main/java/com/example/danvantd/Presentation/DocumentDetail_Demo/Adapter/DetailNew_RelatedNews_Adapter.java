@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.DetailPage_Demo.Adapter;
+package com.example.danvantd.Presentation.DocumentDetail_Demo.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.News;
-import com.example.danvantd.Presentation.DetailPage_Demo.DetailNew_Demo_Acti;
-import com.example.danvantd.Presentation.DetailPage_Demo.ViewHolder.DetailNew_RelatedNews_ViewHolder;
+import com.example.danvantd.Presentation.DocumentDetail_Demo.Document_Detail_Acti;
+import com.example.danvantd.Presentation.DocumentDetail_Demo.ViewHolder.DetailNew_RelatedNews_ViewHolder;
 import com.example.danvantd.R;
 
 import java.util.List;
@@ -51,13 +51,13 @@ public class DetailNew_RelatedNews_Adapter extends RecyclerView.Adapter<DetailNe
         holder.ll_detailnew_RelatedNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gotoDetailPage(list_news.get(holder.getAdapterPosition()));
+                gotoDetailDoc(list_news.get(holder.getAdapterPosition()));
             }
         });
 
     }
-    private void gotoDetailPage(News n){
-        Intent intent = new Intent(context, DetailNew_Demo_Acti.class);
+    private void gotoDetailDoc(News n){
+        Intent intent = new Intent(context, Document_Detail_Acti.class);
         intent.putExtra("id", n.getId());
         context.startActivity(intent);
     }

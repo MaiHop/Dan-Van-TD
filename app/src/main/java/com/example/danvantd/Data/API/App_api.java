@@ -25,6 +25,6 @@ public interface App_api {
     @GET("ajax/ajax_news.php?type=van-ban-cong-tac")
     Call<List<Document>> getlistVanBan();
 
-    @GET("ajax/ajax_news.phptype=van-ban-cong-tac&")
-    Call<Document_Detail> getVanBanbyId(@Query("id") int id);
+    @GET("ajax/ajax_news.php?")
+    Call<Document_Detail> getVanBanbyId(@Query("type") String type,@Query("id") int id);
 }

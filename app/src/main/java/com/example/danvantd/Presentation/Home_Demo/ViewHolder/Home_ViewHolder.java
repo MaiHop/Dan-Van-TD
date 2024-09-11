@@ -14,8 +14,8 @@ import com.example.danvantd.R;
 
 public class Home_ViewHolder extends RecyclerView.ViewHolder {
 
-    ImageView iv_Photo;
-    TextView tv_Tenvi, tv_Motavi;
+    ImageView iv_home_Photo;
+    TextView tv_home_Tenvi, tv_home_Motavi;
     public LinearLayout ll_item_home;
 
     public Home_ViewHolder(@NonNull View itemView) {
@@ -32,17 +32,17 @@ public class Home_ViewHolder extends RecyclerView.ViewHolder {
                 .load(home.getPhoto())
                 .placeholder(R.drawable.loading) // ảnh hiển thị khi đang tải
                 .error(R.drawable.placeholder_image)            // ảnh hiển thị khi có lỗi
-                .into(iv_Photo);
-        this.tv_Tenvi.setText(home.getTenvi());
-        this.tv_Motavi.setText(home.getMotavi());
+                .into(iv_home_Photo);
+        this.tv_home_Tenvi.setText(home.getTenvi());
+        this.tv_home_Motavi.setText(home.getMotavi());
 
 
     }
 
     private void init() {
-        this.iv_Photo = itemView.findViewById(R.id.iv_home_Photo);
-        this.tv_Tenvi = itemView.findViewById(R.id.tv_home_Tenvi);
-        this.tv_Motavi = itemView.findViewById(R.id.tv_home_Motavi);
+        this.iv_home_Photo = itemView.findViewById(R.id.iv_home_Photo);
+        this.tv_home_Tenvi = itemView.findViewById(R.id.tv_home_Tenvi);
+        this.tv_home_Motavi = itemView.findViewById(R.id.tv_home_Motavi);
         this.ll_item_home = itemView.findViewById(R.id.ll_item_home);
     }
 }
