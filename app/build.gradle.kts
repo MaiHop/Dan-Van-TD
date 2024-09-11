@@ -54,4 +54,9 @@ dependencies {
     //Glide
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
+
+    //Round Img View
+    implementation ("com.makeramen:roundedimageview:2.3.0")
+
+
 }

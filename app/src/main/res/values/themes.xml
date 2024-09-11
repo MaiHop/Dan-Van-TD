@@ -15,4 +15,9 @@
     <style name="Theme.DanVanTD.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.DanVanTD.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ThemeSpl" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground"> @drawable/bg_splash</item>
+    </style>
+
 </resources>
