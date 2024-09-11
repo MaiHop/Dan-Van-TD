@@ -1,10 +1,11 @@
-package com.example.danvantd.Presentation.DocumentDetail_Demo.ViewModel;
+package com.example.danvantd.Presentation.NewsDetail_Demo.ViewModel;
 
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+
 
 import com.example.danvantd.Data.Repository.News_RepositoryImpl;
 import com.example.danvantd.Domain.Model.News_Detail;
@@ -14,31 +15,31 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DetailDoc_ViewModel extends ViewModel {
+public class DetailNew_ViewModel extends ViewModel {
     private News_Repository news_repository;
-    private MutableLiveData<News_Detail> docDetail_LiveData = new MutableLiveData<>();
+    private MutableLiveData<News_Detail> detailPage_LiveData = new MutableLiveData<>();
 
-    public DetailDoc_ViewModel() {
+    public DetailNew_ViewModel() {
         this.news_repository = new News_RepositoryImpl();
     }
 
-    public LiveData<News_Detail> getDetailDocLiveData() {
-        return docDetail_LiveData;
+    public LiveData<News_Detail> getDetailNewLiveData() {
+        return detailPage_LiveData;
     }
 
-    public void fetch_DetailDoc(String type, int id) {
+    public void fetch_DetailNew(String type,int id) {
         news_repository.getNewsbyTypeandId(new Callback<News_Detail>() {
             @Override
             public void onResponse(Call<News_Detail> call, Response<News_Detail> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     // Cập nhật dữ liệu vào LiveData
-                    docDetail_LiveData.postValue(response.body());
+                    detailPage_LiveData.postValue(response.body());
                 }
             }
 
             @Override
             public void onFailure(Call<News_Detail> call, Throwable t) {
-                docDetail_LiveData.postValue(null);
+                detailPage_LiveData.postValue(null);
                 Log.e("API Error", "Không thể kết nối đến API", t);
             }
         },type,id);

@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.DocumentDetail_Demo.Adapter;
+package com.example.danvantd.Presentation.NewsDetail_Demo.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,8 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.RelatedNews;
-import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Acti;
-import com.example.danvantd.Presentation.DocumentDetail_Demo.ViewHolder.DetailNew_RelatedNews_ViewHolder;
+import com.example.danvantd.Presentation.NewsDetail_Demo.DetailNew_Demo_Acti;
+import com.example.danvantd.Presentation.NewsDetail_Demo.ViewHolder.DetailNew_RelatedNews_ViewHolder;
 import com.example.danvantd.R;
 
 import java.util.List;
@@ -51,15 +51,15 @@ public class DetailNew_RelatedNews_Adapter extends RecyclerView.Adapter<DetailNe
         holder.ll_detailnew_RelatedNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gotoDetailDoc(list_news.get(holder.getAdapterPosition()));
+                gotoDetailPage(list_news.get(holder.getAdapterPosition()));
             }
         });
 
     }
-    private void gotoDetailDoc(RelatedNews n){
-        Intent intent = new Intent(context, DetailDocument_Acti.class);
+    private void gotoDetailPage(RelatedNews n){
+        Intent intent = new Intent(context, DetailNew_Demo_Acti.class);
         intent.putExtra("id", n.getId());
-        intent.putExtra("type", "van-ban-cong-tac");
+        intent.putExtra("type", "tin-tuc");
         context.startActivity(intent);
     }
 

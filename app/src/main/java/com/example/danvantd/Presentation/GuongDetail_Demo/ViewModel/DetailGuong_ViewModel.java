@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.DocumentDetail_Demo.ViewModel;
+package com.example.danvantd.Presentation.GuongDetail_Demo.ViewModel;
 
 import android.util.Log;
 
@@ -14,19 +14,19 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class DetailDoc_ViewModel extends ViewModel {
+public class DetailGuong_ViewModel extends ViewModel {
     private News_Repository news_repository;
     private MutableLiveData<News_Detail> docDetail_LiveData = new MutableLiveData<>();
 
-    public DetailDoc_ViewModel() {
+    public DetailGuong_ViewModel() {
         this.news_repository = new News_RepositoryImpl();
     }
 
-    public LiveData<News_Detail> getDetailDocLiveData() {
+    public LiveData<News_Detail> getDetailGuongLiveData() {
         return docDetail_LiveData;
     }
 
-    public void fetch_DetailDoc(String type, int id) {
+    public void fetch_DetailGuong(String type, int id) {
         news_repository.getNewsbyTypeandId(new Callback<News_Detail>() {
             @Override
             public void onResponse(Call<News_Detail> call, Response<News_Detail> response) {

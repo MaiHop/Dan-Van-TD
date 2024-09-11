@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.DocumentDetail_Demo.ViewHolder;
+package com.example.danvantd.Presentation.NewsDetail_Demo.ViewHolder;
 
 import android.view.View;
 import android.widget.LinearLayout;

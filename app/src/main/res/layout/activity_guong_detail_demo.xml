@@ -3,17 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".Presentation.DocumentDetail_Demo.DetailDocument_Acti">
-
-
+    android:layout_height="match_parent"
+    tools:context=".Presentation.GuongDetail_Demo.DetailGuong_Acti">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tv_detaildoc_Tenvi"
+            android:id="@+id/tv_detailguong_Tenvi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -22,24 +20,15 @@
             android:textSize="15sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tv_detaildoc_Taive"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:text="Tải về"
-            android:textColor="@android:color/holo_blue_dark"
-            android:textSize="14sp" />
-
         <ImageView
-            android:id="@+id/iv_detaildoc_Photo"
+            android:id="@+id/iv_detailguong_Photo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             tools:srcCompat="@drawable/ic_launcher_background" />
 
         <TextView
-            android:id="@+id/tv_detaildoc_Noidungvi"
+            android:id="@+id/tv_detailguong_Noidungvi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -51,17 +40,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:text="Văn bản liên quan"
+            android:text="Gương điển hình khác"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_detaildoc_RelatedNews"
+            android:id="@+id/rv_detailguong_RelatedNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="2"/>
     </LinearLayout>
-
-
 </ScrollView>

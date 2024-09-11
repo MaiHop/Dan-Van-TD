@@ -7,7 +7,7 @@ public class News_Detail implements Serializable {
     private int id, luotxem,id_list, id_cat, id_item, id_sub;
     private long ngaytao;
     private String type, tenvi, tenkhongdauvi, tenkhongdauen, noidungvi, photo, options;
-    private List<News> news;
+    private List<RelatedNews> news;
 
     public int getId() {
         return id;
@@ -121,11 +121,11 @@ public class News_Detail implements Serializable {
         this.options = options;
     }
 
-    public List<News> getNews() {
+    public List<RelatedNews> getNews() {
         return news;
     }
 
-    public void setNews(List<News> news) {
+    public void setNews(List<RelatedNews> news) {
         this.news = news;
     }
 }

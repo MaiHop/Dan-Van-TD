@@ -8,13 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
-import com.example.danvantd.Domain.Model.Document;
-import com.example.danvantd.Domain.Model.Home;
+import com.example.danvantd.Domain.Model.News;
 import com.example.danvantd.Presentation.Document_Demo.Adapter.Document_Adapter;
 import com.example.danvantd.Presentation.Document_Demo.ViewModel.Document_ViewModel;
-import com.example.danvantd.Presentation.Home_Demo.Adapter.Home_Adapter;
-import com.example.danvantd.Presentation.Home_Demo.Home_Demo_Acti;
-import com.example.danvantd.Presentation.Home_Demo.ViewModel.Home_ViewModel;
 import com.example.danvantd.R;
 
 import java.util.List;
@@ -33,17 +29,17 @@ public class Document_Demo_Acti extends AppCompatActivity {
 
         document_viewModel = new ViewModelProvider(this).get(Document_ViewModel.class);
         // Observe dữ liệu từ LiveData
-        document_viewModel.getListNewsLiveData().observe(this, new Observer<List<Document>>() {
+        document_viewModel.getListNewsLiveData().observe(this, new Observer<List<News>>() {
             @Override
-            public void onChanged(List<Document> documents) {
-                if(!documents.isEmpty()){
-                    Document_Adapter adapter = new Document_Adapter(Document_Demo_Acti.this, documents);
+            public void onChanged(List<News> news) {
+                if(!news.isEmpty()){
+                    Document_Adapter adapter = new Document_Adapter(Document_Demo_Acti.this, news);
                     rv_document_News.setAdapter(adapter);
                 }
             }
         });
 
 //         Gọi hàm để lấy dữ liệu
-        document_viewModel.fetch_Document();
+        document_viewModel.fetch_Document("van-ban-cong-tac");
     }
 }

@@ -1,16 +1,13 @@
 package com.example.danvantd.Presentation.Document_Demo.ViewHolder;
 
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.example.danvantd.Domain.Model.Document;
-import com.example.danvantd.Domain.Model.Home;
+import com.example.danvantd.Domain.Model.News;
 import com.example.danvantd.R;
 
 public class Document_ViewHolder extends RecyclerView.ViewHolder {
@@ -27,9 +24,9 @@ public class Document_ViewHolder extends RecyclerView.ViewHolder {
 
 
 
-    public void updateUI(Document document) {
-        this.tv_document_Tenvi.setText(document.getTenvi());
-        this.tv_docment_Motavi.setText("Số hiệu: "+document.getDoc_sohieu()+" .Ngày ban hành: "+ document.getDoc_ngaybanhanh());
+    public void updateUI(News news) {
+        this.tv_document_Tenvi.setText(news.getTenvi());
+        this.tv_docment_Motavi.setText("Số hiệu: "+ news.getDoc_sohieu()+" .Ngày ban hành: "+ news.getDoc_ngaybanhanh());
 
 
     }

@@ -2,19 +2,19 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="DetailNew_Demo_Acti">
+        <State />
+      </entry>
       <entry key="Document_Demo_Acti">
         <State />
       </entry>
-      <entry key="Document_Detail_Acti">
+      <entry key="Guong_Demo_Acti">
         <State />
       </entry>
       <entry key="Home_Demo_Acti">
         <State />
       </entry>
-      <entry key="MainActivity">
-        <State />
-      </entry>
-      <entry key="TrangChiTiet_Demo_Acti">
+      <entry key="News_Demo_Acti">
         <State />
       </entry>
       <entry key="app">

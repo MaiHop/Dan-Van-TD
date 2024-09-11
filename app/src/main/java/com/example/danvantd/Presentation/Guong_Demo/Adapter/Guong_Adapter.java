@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.Document_Demo.Adapter;
+package com.example.danvantd.Presentation.Guong_Demo.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,18 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.News;
-import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Acti;
-import com.example.danvantd.Presentation.Document_Demo.ViewHolder.Document_ViewHolder;
+import com.example.danvantd.Presentation.Guong_Demo.ViewHolder.Guong_ViewHolder;
+import com.example.danvantd.Presentation.NewsDetail_Demo.DetailNew_Demo_Acti;
 import com.example.danvantd.R;
 
 import java.util.List;
 
-public class Document_Adapter extends RecyclerView.Adapter<Document_ViewHolder>{
+public class Guong_Adapter extends RecyclerView.Adapter<Guong_ViewHolder>{
     private List<News> list_News;
     private LayoutInflater minflater;
     private Context context;
 
-    public Document_Adapter(Context context, List<News> list_News) {
+    public Guong_Adapter(Context context, List<News> list_News) {
         this.list_News = list_News;
         this.context = context;
         this.minflater = LayoutInflater.from(context);
@@ -29,11 +29,11 @@ public class Document_Adapter extends RecyclerView.Adapter<Document_ViewHolder>{
 
     @NonNull
     @Override
-    public Document_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Guong_ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = minflater.inflate(
-                R.layout.item_document, parent, false);
+                R.layout.item_news, parent, false);
 
-        return new Document_ViewHolder(itemView);
+        return new Guong_ViewHolder(itemView);
     }
 
     @Override
@@ -42,23 +42,23 @@ public class Document_Adapter extends RecyclerView.Adapter<Document_ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(@NonNull Document_ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Guong_ViewHolder holder, int position) {
         News news = list_News.get(position);
 
         holder.updateUI(news);
-        holder.ll_item_document.setOnClickListener(new View.OnClickListener() {
+        holder.ll_item_news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                gotoDetailDoc(list_News.get(holder.getAdapterPosition()));
+                gotoDetailPage(list_News.get(holder.getAdapterPosition()));
             }
         });
 
     }
 
-    private void gotoDetailDoc(News news){
-        Intent intent = new Intent(context, DetailDocument_Acti.class);
+    private void gotoDetailPage(News news){
+        Intent intent = new Intent(context, DetailNew_Demo_Acti.class);
         intent.putExtra("id", news.getId());
-        intent.putExtra("type", "van-ban-cong-tac");
+        intent.putExtra("type", "guong-dien-hinh");
         context.startActivity(intent);
     }
 

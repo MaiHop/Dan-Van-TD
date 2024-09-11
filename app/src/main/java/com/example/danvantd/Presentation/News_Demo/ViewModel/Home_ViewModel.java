@@ -1,4 +1,4 @@
-package com.example.danvantd.Presentation.Document_Demo.ViewModel;
+package com.example.danvantd.Presentation.News_Demo.ViewModel;
 
 import android.util.Log;
 
@@ -16,31 +16,49 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Document_ViewModel extends ViewModel {
+public class Home_ViewModel extends ViewModel {
     private News_Repository news_repository;
-    private MutableLiveData<List<News>> list_Document_LiveData = new MutableLiveData<>();
+    private MutableLiveData<List<News>> list_News_LiveData = new MutableLiveData<>();
 
-    public Document_ViewModel() {
+    public Home_ViewModel() {
         this.news_repository = new News_RepositoryImpl();
     }
 
     public LiveData<List<News>> getListNewsLiveData() {
-        return list_Document_LiveData;
+        return list_News_LiveData;
     }
 
-    public void fetch_Document(String type){
-        news_repository.getlistNewsbyType(new Callback<List<News>>() {
+    public void fetch_News_Home(){
+        news_repository.getlistNews_Home(new Callback<List<News>>() {
             @Override
             public void onResponse(Call<List<News>> call, Response<List<News>> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     // Cập nhật dữ liệu vào LiveData
-                    list_Document_LiveData.postValue(response.body());
+                    list_News_LiveData.postValue(response.body());
                 }
             }
 
             @Override
             public void onFailure(Call<List<News>> call, Throwable t) {
-                list_Document_LiveData.postValue(null);
+                list_News_LiveData.postValue(null);
+                Log.e("API Error", "Không thể kết nối đến API", t);
+            }
+        });
+    }
+
+    public void fetch_News(String type){
+        news_repository.getlistNewsbyType(new Callback<List<News>>() {
+            @Override
+            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    // Cập nhật dữ liệu vào LiveData
+                    list_News_LiveData.postValue(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<News>> call, Throwable t) {
+                list_News_LiveData.postValue(null);
                 Log.e("API Error", "Không thể kết nối đến API", t);
             }
         },type);
