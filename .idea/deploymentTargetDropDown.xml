@@ -2,9 +2,6 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="DetailGuong_Acti">
-        <State />
-      </entry>
       <entry key="Home_Demo_Acti">
         <State />
       </entry>
@@ -12,6 +9,9 @@
         <State />
       </entry>
       <entry key="Navigation">
+        <State />
+      </entry>
+      <entry key="SplashTheme">
         <State />
       </entry>
       <entry key="app">

@@ -3,6 +3,7 @@
     <style name="Base.Theme.DanVanTD" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/material_dynamic_neutral90</item>
     </style>
 
     <style name="Theme.DanVanTD" parent="Base.Theme.DanVanTD" />
