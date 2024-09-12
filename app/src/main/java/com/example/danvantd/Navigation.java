@@ -16,7 +16,9 @@ import android.widget.TextView;
 
 import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Fragment;
 import com.example.danvantd.Presentation.Document_Demo.Document_Fragment;
+import com.example.danvantd.Presentation.GuongDetail_Demo.DetailGuong_Fragment;
 import com.example.danvantd.Presentation.Guong_Demo.Guong_Fragment;
+import com.example.danvantd.Presentation.NewsDetail_Demo.DetailNew_Fragment;
 import com.example.danvantd.Presentation.News_Demo.Home_Fragment;
 import com.example.danvantd.Presentation.News_Demo.New_Fragment;
 import com.google.android.material.navigation.NavigationView;
@@ -50,7 +52,6 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        replaceFragment(new Home_Fragment());
 
         Bundle bundle = getIntent().getExtras();
         int id = bundle.getInt("id",-1);
@@ -59,6 +60,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
 
         //Kiểm tra có phải qua detail ko
         if(detail.equals("")||type.equals("")){
+            replaceFragment(new Home_Fragment());
             navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
             toolbar_title.setText(getString(R.string.title_home));
         }else{
@@ -70,20 +72,29 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
                     //Set setArguments là bundle
                     detaidoc.setArguments(bundle);
                     replaceFragment(detaidoc);
+                    navigationView.getMenu().findItem(R.id.nav_vanban).setChecked(true);
+                    toolbar_title.setText(getString(R.string.title_chittiet));
+                    mCurrentFragment = FRAGMENT_VANBAN;
                     break;
                 case "guong":
-//                    //Gọi fragment
-//                    DetailGuo_Fragment detaidoc = new DetailDocument_Fragment();
-//                    //Set setArguments là bundle
-//                    detaidoc.setArguments(bundle);
-//                    replaceFragment(detaidoc);
+                    //Gọi fragment
+                    DetailGuong_Fragment detaiguong = new DetailGuong_Fragment();
+                    //Set setArguments là bundle
+                    detaiguong.setArguments(bundle);
+                    replaceFragment(detaiguong);
+                    navigationView.getMenu().findItem(R.id.nav_guongDienHinh).setChecked(true);
+                    toolbar_title.setText(getString(R.string.title_chittiet));
+                    mCurrentFragment = FRAGMENT_GUONG;
                     break;
                 case "tintuc":
-//                    //Gọi fragment
-//                    DetailDocument_Fragment detaidoc = new DetailDocument_Fragment();
-//                    //Set setArguments là bundle
-//                    detaidoc.setArguments(bundle);
-//                    replaceFragment(detaidoc);
+                    //Gọi fragment
+                    DetailNew_Fragment detailNewFragment = new DetailNew_Fragment();
+                    //Set setArguments là bundle
+                    detailNewFragment.setArguments(bundle);
+                    replaceFragment(detailNewFragment);
+                    navigationView.getMenu().findItem(R.id.nav_tintuc).setChecked(true);
+                    toolbar_title.setText(getString(R.string.title_chittiet));
+                    mCurrentFragment = FRAGMENT_TINTUC;
                     break;
             }
         }
