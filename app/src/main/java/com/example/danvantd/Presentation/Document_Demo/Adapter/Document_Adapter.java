@@ -2,16 +2,19 @@ package com.example.danvantd.Presentation.Document_Demo.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.News;
+import com.example.danvantd.Navigation;
 import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Acti;
 import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Fragment;
 import com.example.danvantd.Presentation.Document_Demo.ViewHolder.Document_ViewHolder;
@@ -23,10 +26,12 @@ public class Document_Adapter extends RecyclerView.Adapter<Document_ViewHolder>{
     private List<News> list_News;
     private LayoutInflater minflater;
     private Context context;
+    private Fragment fm;
 
     public Document_Adapter(Context context, List<News> list_News) {
         this.list_News = list_News;
         this.context = context;
+        this.fm = fm;
         this.minflater = LayoutInflater.from(context);
     }
 
@@ -59,14 +64,12 @@ public class Document_Adapter extends RecyclerView.Adapter<Document_ViewHolder>{
     }
 
     private void gotoDetailDoc(News news){
-
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_content, fragment);
-        transaction.commit();
-
-        Intent intent = new Intent(context, DetailDocument_Fragment.class);
-        intent.putExtra("id", news.getId());
-        intent.putExtra("type", "van-ban-cong-tac");
+        Intent intent = new Intent(context, Navigation.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", news.getId());
+        bundle.putString("type", "van-ban-cong-tac");
+        bundle.putString("chitiet", "vanban");
+        intent.putExtras(bundle);
         context.startActivity(intent);
     }
 

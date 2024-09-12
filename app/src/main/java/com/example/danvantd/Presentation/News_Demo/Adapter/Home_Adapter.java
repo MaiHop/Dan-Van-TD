@@ -2,6 +2,7 @@ package com.example.danvantd.Presentation.News_Demo.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.News;
+import com.example.danvantd.Navigation;
 import com.example.danvantd.Presentation.NewsDetail_Demo.DetailNew_Demo_Acti;
 import com.example.danvantd.Presentation.News_Demo.ViewHolder.Home_ViewHolder;
 import com.example.danvantd.R;
@@ -56,9 +58,12 @@ public class Home_Adapter extends RecyclerView.Adapter<Home_ViewHolder>{
     }
 
     private void gotoDetailPage(News news){
-        Intent intent = new Intent(context, DetailNew_Demo_Acti.class);
-        intent.putExtra("id", news.getId());
-        intent.putExtra("type", "tin-tuc");
+        Intent intent = new Intent(context, Navigation.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", news.getId());
+        bundle.putString("type", "tin-tuc");
+        bundle.putString("chitiet", "tintuc");
+        intent.putExtras(bundle);
         context.startActivity(intent);
     }
 

@@ -2,6 +2,7 @@ package com.example.danvantd.Presentation.GuongDetail_Demo.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.RelatedNews;
+import com.example.danvantd.Navigation;
 import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Acti;
 import com.example.danvantd.Presentation.GuongDetail_Demo.ViewHolder.DetailNew_RelatedNews_ViewHolder;
 import com.example.danvantd.R;
@@ -57,9 +59,12 @@ public class DetailNew_RelatedNews_Adapter extends RecyclerView.Adapter<DetailNe
 
     }
     private void gotoDetailDoc(RelatedNews n){
-        Intent intent = new Intent(context, DetailDocument_Acti.class);
-        intent.putExtra("id", n.getId());
-        intent.putExtra("type", "guong-dien-hinh");
+        Intent intent = new Intent(context, Navigation.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", n.getId());
+        bundle.putString("type", "guong-dien-hinh");
+        bundle.putString("chitiet", "guong");
+        intent.putExtras(bundle);
         context.startActivity(intent);
     }
 

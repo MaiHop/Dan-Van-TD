@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.DownloadManager;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -42,8 +43,9 @@ public class DetailDocument_Fragment extends Fragment {
         init(view);
 
         if (getArguments() != null) {
-            int id = getArguments().getInt("id", -1);
-            String type = getArguments().getString("type", "");
+            Bundle bundle = getArguments();
+            int id =  bundle.getInt("id", -1);
+            String type = bundle.getString("type", "");
             if (id != -1 && !type.equals("")) {
                 detailDoc_viewModel = new ViewModelProvider(this).get(DetailDoc_ViewModel.class);
                 detailDoc_viewModel.getDetailDocLiveData().observe(getViewLifecycleOwner(), new Observer<News_Detail>() {

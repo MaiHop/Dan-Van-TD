@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -50,8 +51,43 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         navigationView.setNavigationItemSelectedListener(this);
 
         replaceFragment(new Home_Fragment());
-        navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-        toolbar_title.setText(getString(R.string.title_home));
+
+        Bundle bundle = getIntent().getExtras();
+        int id = bundle.getInt("id",-1);
+        String type = bundle.getString("type");
+        String detail = bundle.getString("chitiet");
+
+        //Kiểm tra có phải qua detail ko
+        if(detail.equals("")||type.equals("")){
+            navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
+            toolbar_title.setText(getString(R.string.title_home));
+        }else{
+            //Kiểm tra trả về chi tiết cái gì
+            switch (detail){
+                case "vanban":
+                    //Gọi fragment
+                    DetailDocument_Fragment detaidoc = new DetailDocument_Fragment();
+                    //Set setArguments là bundle
+                    detaidoc.setArguments(bundle);
+                    replaceFragment(detaidoc);
+                    break;
+                case "guong":
+//                    //Gọi fragment
+//                    DetailGuo_Fragment detaidoc = new DetailDocument_Fragment();
+//                    //Set setArguments là bundle
+//                    detaidoc.setArguments(bundle);
+//                    replaceFragment(detaidoc);
+                    break;
+                case "tintuc":
+//                    //Gọi fragment
+//                    DetailDocument_Fragment detaidoc = new DetailDocument_Fragment();
+//                    //Set setArguments là bundle
+//                    detaidoc.setArguments(bundle);
+//                    replaceFragment(detaidoc);
+                    break;
+            }
+        }
+
         // Tắt tiêu đề mặc định của Toolbar
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
