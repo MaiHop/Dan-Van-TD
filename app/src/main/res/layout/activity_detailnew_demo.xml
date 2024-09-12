@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".Presentation.DetailPage_Demo.DetailNew_Demo_Acti">
 
-
+    <include layout="@layout/toolbar" />
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

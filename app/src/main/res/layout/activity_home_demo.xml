@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Presentation.Home_Demo.Home_Demo_Acti">
 
+    <include layout="@layout/toolbar" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_home_News"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-        />
+
 </LinearLayout>

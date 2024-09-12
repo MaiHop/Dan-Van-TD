@@ -1,6 +1,7 @@
 package com.example.danvantd.Presentation.DetailPage_Demo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -29,6 +30,8 @@ public class DetailNew_Demo_Acti extends AppCompatActivity {
     private ImageView iv_detailnew_Photo;
     private RecyclerView rv_detailnew_Images,rv_detailnew_RelatedNews;
     private DetailNew_ViewModel detailNew_viewModel;
+    private TextView tb_title;
+    private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,5 +157,9 @@ public class DetailNew_Demo_Acti extends AppCompatActivity {
         //RecyclerView
         rv_detailnew_Images = findViewById(R.id.rv_detailnew_Images);
         rv_detailnew_RelatedNews = findViewById(R.id.rv_detailnew_RelatedNews);
+
+        this.toolbar =findViewById(R.id.toolbar);
+        this.tb_title =findViewById(R.id.tb_tilte);
+        tb_title.setText("This is detail");
     }
 }
