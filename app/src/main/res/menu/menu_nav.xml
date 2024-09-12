@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_home"
+            android:title="@string/nav_home"
+            android:icon="@drawable/ic_home" />
+
+        <item android:id="@+id/nav_tintuc"
+            android:title="@string/nav_tintuc"
+            android:icon="@drawable/ic_world" />
+
+        <item android:id="@+id/nav_vanban"
+            android:title="@string/nav_vanban"
+            android:icon="@drawable/ic_document" />
+
+        <item android:id="@+id/nav_guongDienHinh"
+            android:title="@string/nav_guongdienhinh"
+            android:icon="@drawable/ic_star" />
+    </group>
+</menu>
