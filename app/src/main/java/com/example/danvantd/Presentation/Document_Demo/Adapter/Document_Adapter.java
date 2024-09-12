@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.danvantd.Domain.Model.News;
 import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Acti;
+import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Fragment;
 import com.example.danvantd.Presentation.Document_Demo.ViewHolder.Document_ViewHolder;
 import com.example.danvantd.R;
 
@@ -57,7 +59,12 @@ public class Document_Adapter extends RecyclerView.Adapter<Document_ViewHolder>{
     }
 
     private void gotoDetailDoc(News news){
-        Intent intent = new Intent(context, DetailDocument_Acti.class);
+
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_content, fragment);
+        transaction.commit();
+
+        Intent intent = new Intent(context, DetailDocument_Fragment.class);
         intent.putExtra("id", news.getId());
         intent.putExtra("type", "van-ban-cong-tac");
         context.startActivity(intent);
