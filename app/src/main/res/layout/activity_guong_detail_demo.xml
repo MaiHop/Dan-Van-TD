@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Presentation.GuongDetail_Demo.DetailGuong_Acti">
+    tools:context=".Presentation.GuongDetail.DetailGuong_Acti">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

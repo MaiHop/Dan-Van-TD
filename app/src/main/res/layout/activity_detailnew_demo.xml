@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     style="@style/BACKGROUND"
-    tools:context=".Presentation.NewsDetail_Demo.DetailNew_Demo_Acti">
+    tools:context=".Presentation.NewsDetail.DetailNew_Acti">
 
 
     <ScrollView

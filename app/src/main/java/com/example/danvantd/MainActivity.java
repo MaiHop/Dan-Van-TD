@@ -4,20 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import com.example.danvantd.Data.API.News_api;
-import com.example.danvantd.Domain.Model.News_Detail;
-import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Fragment;
-import com.example.danvantd.di.ServiceBuilder;
-
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     TextView tv_listTInTuc, tv_Test_Noidungvi_content, tv_Test_Noidungvi_image;

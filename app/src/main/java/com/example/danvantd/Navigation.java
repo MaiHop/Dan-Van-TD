@@ -9,18 +9,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.danvantd.Presentation.DocumentDetail_Demo.DetailDocument_Fragment;
-import com.example.danvantd.Presentation.Document_Demo.Document_Fragment;
-import com.example.danvantd.Presentation.GuongDetail_Demo.DetailGuong_Fragment;
-import com.example.danvantd.Presentation.Guong_Demo.Guong_Fragment;
-import com.example.danvantd.Presentation.NewsDetail_Demo.DetailNew_Fragment;
-import com.example.danvantd.Presentation.News_Demo.Home_Fragment;
-import com.example.danvantd.Presentation.News_Demo.New_Fragment;
+import com.example.danvantd.Presentation.DocumentDetail.DetailDocument_Fragment;
+import com.example.danvantd.Presentation.Document.Document_Fragment;
+import com.example.danvantd.Presentation.GuongDetail.DetailGuong_Fragment;
+import com.example.danvantd.Presentation.Guong.Guong_Fragment;
+import com.example.danvantd.Presentation.NewsDetail.DetailNew_Fragment;
+import com.example.danvantd.Presentation.News.Home_Fragment;
+import com.example.danvantd.Presentation.News.New_Fragment;
 import com.google.android.material.navigation.NavigationView;
 
 public class Navigation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {

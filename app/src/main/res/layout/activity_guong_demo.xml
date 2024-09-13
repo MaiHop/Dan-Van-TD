@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     style="@style/BACKGROUND"
-    tools:context=".Presentation.Guong_Demo.Guong_Demo_Acti">
+    tools:context=".Presentation.Guong.Guong_Acti">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_guong_News"
         android:layout_width="match_parent"

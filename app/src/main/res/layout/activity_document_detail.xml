@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     style="@style/BACKGROUND"
-    tools:context=".Presentation.DocumentDetail_Demo.DetailDocument_Acti">
+    tools:context=".Presentation.DocumentDetail.DetailDocument_Acti">
 
 
     <LinearLayout
