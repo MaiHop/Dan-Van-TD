@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    style="@style/BACKGROUND"
     tools:context=".Presentation.Document_Demo.Document_Demo_Acti">
 
     <androidx.recyclerview.widget.RecyclerView

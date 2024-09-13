@@ -16,14 +16,13 @@
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar"
             >
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:title=""
-                android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                style="@style/BACKGROUND"
                 >
                 <TextView
                     android:id="@+id/toolbar_title"
@@ -32,7 +31,8 @@
                     android:layout_gravity="center"
                     android:text=""
                     android:textSize="18sp"
-                    android:gravity="center"/>
+                    android:gravity="center"
+                    style="@style/TEXT"/>
             </androidx.appcompat.widget.Toolbar>
             <!-- Đường viền ngang dưới Toolbar -->
             <View
@@ -56,9 +56,8 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/layout_header_navigation"
         app:menu="@menu/menu_nav"
-        app:itemIconTint="@color/color_navigation"
-        app:itemTextColor="@color/color_navigation"
         app:itemBackground="@drawable/nav_backg"
+        style="@style/NavigationView"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

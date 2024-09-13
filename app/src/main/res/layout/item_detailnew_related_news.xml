@@ -15,8 +15,6 @@
         android:layout_marginRight="5dp"
         android:padding="10dp"
         android:text="TextView"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="13sp"
-        android:textStyle="bold" />
+        style="@style/TEXT_RelatedNews" />
 
 </LinearLayout>

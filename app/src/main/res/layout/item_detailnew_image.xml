@@ -21,6 +21,7 @@
         android:layout_marginBottom="0dp"
         android:layout_marginStart="10dp"
         android:text="Content"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        style="@style/TEXT"/>
 
 </LinearLayout>

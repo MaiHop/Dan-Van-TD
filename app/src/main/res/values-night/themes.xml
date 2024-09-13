@@ -2,6 +2,40 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.DanVanTD" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/material_dynamic_neutral90</item>
+    </style>
+
+    <!--    Dark mode-->
+    <style name="BACKGROUND_Toolbar">
+        <item name="android:background">#000</item>
+    </style>
+    <style name="BACKGROUND">
+        <item name="android:background">#383838</item>
+    </style>
+    <style name="TEXT">
+        <item name="android:textColor">#FFF</item>
+    </style>
+    <style name="NavigationView_headerLayout">
+        <item name="android:background">#000</item>
+    </style>
+    <style name="TEXT_TenVi">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+    <style name="TEXT_MotaVi">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+    <style name="TEXT_RelatedNews">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFF</item>
+    </style>
+
+    <style name="NavigationView">
+        <item name="itemIconTint">@color/color_navigation_icon_dark</item>
+        <item name="itemTextColor">@color/color_navigation_text_dark</item>
+        <item name="android:background">#1e1e1e</item>
     </style>
 </resources>

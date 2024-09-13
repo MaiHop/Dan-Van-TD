@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    style="@style/BACKGROUND"
     tools:context=".Presentation.DocumentDetail_Demo.DetailDocument_Acti">
 
 
@@ -18,9 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Tenvi"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            style="@style/TEXT_TenVi" />
 
         <TextView
             android:id="@+id/tv_detaildoc_Taive"
@@ -45,7 +44,8 @@
             android:layout_margin="5dp"
             android:text="Noidungvi"
             android:textAlignment="viewStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            style="@style/TEXT"/>
 
         <TextView
             android:layout_width="match_parent"

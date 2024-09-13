@@ -16,9 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:text="Tenvi"
-            android:textColor="@android:color/holo_red_light"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            style="@style/TEXT_TenVi" />
 
         <ImageView
             android:id="@+id/iv_detailguong_Photo"
@@ -34,7 +32,8 @@
             android:layout_margin="5dp"
             android:text="Noidungvi"
             android:textAlignment="viewStart"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            style="@style/TEXT"/>
 
         <TextView
             android:layout_width="match_parent"
