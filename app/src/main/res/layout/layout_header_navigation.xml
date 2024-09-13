@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
+    android:layout_height="200dp"
     android:orientation="vertical"
-    android:gravity="bottom"
-    android:background="@color/white">
+    android:gravity="bottom">
 
     <ImageView
-        android:layout_width="75dp"
-        android:layout_height="75dp"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@drawable/icon_app"/>
+        android:src="@mipmap/ic_app1" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ban Dân Vận TP Thủ Đức"
         android:textSize="18sp"
-        android:layout_marginTop="8dp"
         android:layout_gravity="center"
-        android:textColor="@color/black"/>
+        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,7 +25,8 @@
         android:textSize="18sp"
         android:layout_gravity="center"
         android:textColor="@color/Silver"
-        android:paddingBottom="20dp"/>
+        android:layout_marginBottom="20dp"
+        />
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
